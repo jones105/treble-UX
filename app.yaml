@@ -1,0 +1,61 @@
+application: virtualdjbeta
+version: 1
+runtime: python
+api_version: 1
+
+default_expiration: "5m"
+
+handlers:
+- url: /css
+  static_dir: css
+
+- url: /image
+  static_dir: image
+  
+- url: /script
+  static_dir: script
+  
+- url: /utils
+  static_dir: utils
+
+- url: /doc
+  static_dir: doc
+
+- url: /audio
+  static_dir: audio
+  
+- url: /src
+  static_dir: src
+
+- url: /_sources
+  static_dir: _sources
+  
+- url: /swf
+  static_dir: swf
+
+- url: /favicon.ico
+  static_dir: static/images/favicon.ico
+
+- url: .*/css
+  static_dir: css
+  
+- url: .*/images
+  static_dir: static/images
+  
+- url: .*/js
+  static_dir: js
+
+- url: /demo/.*
+  script: demo.py
+
+- url: /sub2/.*
+  script: sub2.py
+
+- url: /sub3/.*
+  script: sub3.py
+
+- url: /.*
+  script: home.py
+
+builtins:
+- datastore_admin: on

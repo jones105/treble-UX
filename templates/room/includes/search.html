@@ -1,0 +1,52 @@
+<script type="text/javascript" src="/script/jqueryui.js"></script>   
+
+<div id="leftColumn">
+
+		<div>
+
+				<div id="resultsWrapper">
+					<div class="scrollable">
+						
+						<div id="crateTitle">
+							<img style="margin-left:33px;" src="/public/images/treble_images/myCrateText.png"></img>
+							
+							<div id="queue" class="songResults">			
+								<form id="searchForm" action="" name="searchForm" >
+						   			<input name="queryString" id="searchInput" placeholder="Search for Music..." type="text" size="40" ></input>
+								</form>
+								
+								<div id="noResults">
+									<div>
+										<p class="searchNote">search for songs to add them</p>
+									</div>
+								</div>
+								<div id="searchResults">
+									<ol id="resultList">
+									</ol>
+								</div>
+								<input id="doneSearching" type=button onclick="doneSearching()" value="save" />
+								<ol id="playlist" class='droptrue'>
+								</ol>
+							</div>
+						
+						</div>
+						
+						
+					</div>
+								
+					<div id="noResultsModal" style="display:none;">
+						<p>
+							There where no results found of this input :(
+						</p>
+					</div>
+					<div id="noMoreResultsModal" style="display:none;">
+						<p>
+							You have reached the end of the road, no more results
+						</p>
+					</div>
+
+				</div>
+				
+		</div>
+		
+</div>

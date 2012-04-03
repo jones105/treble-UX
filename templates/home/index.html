@@ -1,0 +1,94 @@
+{% extends "base_info.html" %}
+{% block content %}
+{% include "includes/topbar.html" %}
+
+<script src="/script/soundcloud.player.api.js" type="text/javascript" ></script>
+<script src="/script/sc-player.js" type="text/javascript" ></script>
+<script src="/script/getRooms.js" type="text/javascript" ></script>
+
+<nav id="menu">
+	<ol>
+		<li class="item new" onclick="updateURL('new')">New</li>
+		<li class="item top" onclick="updateURL('top')">Top</li>
+		<li class="item favorited" onclick="updateURL('favorited')">Favorited</li>
+		<li class="item yours" onclick="updateURL('yours')">Yours</li>
+		<li class="item random" onclick="updateURL('random')">Random</li>
+	</ol>
+	<div class="separator"></div>
+	<ol class="info">
+		<li class="item team" onclick="updateURL('team')">Top</li>
+		<li class="item about" onclick="updateURL('about')">About</li>
+		<li class="item blog" onclick="updateURL('jobs')">Blog</li>
+		<li class="item contact" onclick="updateURL('contact')">Contact</li>
+		<li class="item API :)" onclick="updateURL('api')">API :)</li>
+	</ol>
+
+
+	
+</nav>
+
+<script type="text/javascript">
+updateURL('top');
+function updateURL(newURL) {
+	for (var i=0; i < $('.item').length; i++) { $('.item').removeClass("active") };
+	$('.'+newURL).attr("class","item " + newURL + " active");
+	if (newURL == 'top') {window.history.pushState("top", "Top", "/");}
+	if (newURL == 'new') {window.history.pushState("new", "New", "/");}
+	if (newURL == 'favorited') {window.history.pushState("favorited", "Favorited", "/");}
+	if (newURL == 'yours') {window.history.pushState("yours", "Yours", "/");}
+	if (newURL == 'random') {window.history.pushState("random", "Random", "/");}
+}
+</script>
+
+
+
+<div id="content">
+	<ul id="rooms"></ul>
+</div>
+<style>
+#createRoom {
+background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #F9AF3F), color-stop(1, #DB8300) );
+background: -moz-linear-gradient( center top, #F9AF3F 5%, #DB8300 100% );
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9af3f', endColorstr='#db8300');
+background-color: #F9AF3F;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+display: inline-block;
+color: black;
+font-family: Arial;
+font-size: 14px;
+font-weight: normal;
+padding: 12px 20px;
+text-decoration: none;
+margin-top: 20px;
+list-style: none;
+border: none;
+cursor: pointer;
+}
+
+#createRoom:hover {
+background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #DB8300), color-stop(1, #F9AF3F) );
+background: -moz-linear-gradient( center top, #DB8300 5%, #F9AF3F 100% );
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#db8300', endColorstr='#f9af3f');
+}
+</style>
+
+<div style="display:none;" id="splash">
+	<div id="pageLayout">
+		<p id="comingSoon">Thanks for checking in,<br> <br>
+		                                     The alpha release will be out very soon, so<br>
+											get ready to listen to some great music,<br>
+												<img style="margin-left:-8px; margin-top:10px; width:150px;" id="layoutImage" src="/image/logo.png"></img><br><br><br>
+											
+											<span style="margin-left:100px; font-size:10px;" >If  you haven't requested an invite yet, you still have a few days to do so:</span>
+		</p>
+											<div rel="OXUR76QR" class="lrdiscoverwidget" data-logo="off" data-background="off" data-share-url="www.treble.fm" data-css=""></div><script type="text/javascript" src="http://launchrock-ignition.s3.amazonaws.com/ignition.1.1.js"></script>
+         <script>    $(".input").val("notify me"); </script>
+	 </div>
+</div>	
+
+
+
+
+{% endblock %}

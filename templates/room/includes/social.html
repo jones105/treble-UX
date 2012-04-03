@@ -1,0 +1,39 @@
+
+#{set 'moreScripts'}
+	#{get 'moreScripts' /}
+	
+	<script type="text/javascript" src="@{'/public/javascripts/social.js'}"></script>
+	
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+#{/set}
+
+<div id="socialWrapper">
+	
+	<div id="media">
+		<div id="likeButton" class="fb-like" data-send="false" data-layout="button_count" data-width="10" data-show-faces="false"></div>
+		<div id="tweetButtonWrapper">
+			<a id="tweetButton" href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.treble.fm" data-text="Check out this LiveSet! " data-hashtags="treblefm">Tweet</a>
+		</div>
+		<input id="pageUrl" type="text" />
+	</div>
+	
+	<div id="mySpins">
+		<div id="mySpinsText">My SPINS</div>
+		<img id="mySpinsImg" alt="spins" src="@{'/public/images/treble_images/small_white_record.png'}" /> 
+		<div id="mySpinsNum">0</div>
+	</div>
+	
+	<div id="djList">
+		<div id="djListText"><span id="djNum">0</span> DJs mixing this LiveSet</div>
+	</div>
+</div>
+

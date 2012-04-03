@@ -1,0 +1,232 @@
+html {
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed;
+  background-color: #222222;
+  background: url("/image/irongrip.png");
+}
+
+body {
+  font-family: Georgia, serif;
+  color: #333;
+  font-size: 16px;
+  margin: 0 auto;
+  padding: 10px 10px 0;
+  padding-bottom: 1px;
+  -moz-transition-timing-function: ease;
+  -moz-transition-duration: 300ms;
+  -webkit-transition-timing-function: ease;
+  -webkit-transition-duration: 300ms;
+  -o-transition-timing-function: ease;
+  -o-transition-duration: 300ms;
+  transition-timing-function: ease;
+  transition-duration: 300ms;
+	-moz-transition-delay: 150ms;
+	-webkit-transition-delay: 150ms;
+	-o-transition-delay: 150ms;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+.songName {
+	height: 23px;
+	overflow: hidden;
+	width: 300px;
+	color: #DDD;
+	text-shadow: none;
+	font-family: sans-serif;
+	margin-left: 3px;
+}
+
+#searchForm {
+	margin-top: 80px;
+}
+
+#noResults > div
+{
+	color: #F9B03F;
+	text-shadow: none;
+	margin: 0 auto;
+	text-align: center;
+	font-weight: bold;
+	width: 160px;
+}
+
+.searchText {
+	color: #EEE;
+	font-family: sans-serif;
+	font-weight: bold;
+	margin: 5px 0 5px;
+	text-shadow: none;
+}
+
+#resultList {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	margin-top: 10px;
+	height: 347px;
+}
+
+#resultList .even {
+	background-color: #333;
+ }
+#resultList .odd {
+	background-color: #222;
+ }
+ 
+#resultList .even:hover > div {
+	color: #888;
+ }
+#resultList .odd:hover > div {
+	color: #888;
+ }
+ 
+#playlist li.even {
+	background-color: #000000;
+}
+
+#playlist li.odd {
+	background-color: #000000;
+} 
+
+.playable {
+	margin: 0px;
+	padding: 2px;
+	height: 25px;
+	padding-left: 7px;
+}
+
+.playable .title {
+	height: 18px;
+	margin-top: 4px;
+	overflow: hidden;
+	width: 150px;
+	float: left;
+	text-shadow: none;
+	font-size: 19px;
+	color: #555;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+ol{
+	list-style: none;
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.notplayable{
+	background-color: #222222;
+ }
+ 
+#leftColumn {
+width: 243px;
+height: 600px;
+float: left;
+}
+
+#searchInput {
+	background: url(/image/search-dark.png) no-repeat 171px 6px #777;
+	border: 0 none;
+	font: bold 12px Arial,Helvetica,Sans-serif;
+	color: black;
+	width: 170px;
+	padding: 7px 16px 7px 16px;
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+	-webkit-transition: all 0.7s ease 0s;
+	-moz-transition: all 0.7s ease 0s;
+	-o-transition: all 0.7s ease 0s;
+	transition: all 0.7s ease 0s;
+	margin-top: 1px;
+	margin-bottom: 0px;
+	border: 1px solid #333;
+	margin-left: 20px;
+	border-radius: 16px;
+}
+
+#searchInput:hover {
+	background-color: #999;
+}
+
+#searchInput:focus {
+	background-color:#999;
+	box-shadow:none;
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+}
+
+::-webkit-input-placeholder {
+    color:    #333;
+}
+:-moz-placeholder {
+    color:    #333;
+}
+
+#doneSearching {
+	height: 0px;
+	opacity: 0.0;
+	width: 100%;
+	background-color: #DDD;
+	border: 1px solid #999;
+}
+
+#doneSearching:hover {
+	background-color: #EEE;
+	border: 1px solid #777;
+}
+
+#searchResults {
+	margin: 0;
+	height: 0px;
+	padding-left: 0;
+	width: 244px;
+	opacity: 0.0;
+}
+
+.searchbuttons {
+	width: 66px;
+	float: right;
+}
+
+
+#crateTitle {
+    width: 245px;
+    overflow:hidden;
+}
+
+.scrollable {
+	padding: 0;
+	text-shadow: 0 1px 0 white;
+	border-radius: 6px;
+}
+
+#queue {
+	height: 400px;
+	width: 241px;
+}
+
+#playlist {
+    border-radius: 4px 4px 4px 4px;
+    overflow: hidden;
+    width: 224px;
+}
+
+#playlist li.song {
+    margin-bottom: 5px;
+    padding: 5px; 
+    border-radius: 4px 4px 4px 4px;
+	cursor: move;
+	}
+}
+
+#playlist li:even {
+	background-color:#555555;
+}
+

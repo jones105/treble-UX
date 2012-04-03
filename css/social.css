@@ -1,0 +1,48 @@
+#socialWrapper 
+{
+    background-color: rgba(150, 150, 150, 0.4);
+    border-radius: 6px 6px 6px 6px;
+    float: right;
+    margin: 10px 0 0 15px;
+    padding: 10px;
+    width: 239px;
+}
+
+#likeButton{
+}
+#tweetButtonWrapper{
+}
+
+#mySpins{
+	border-bottom: 1px solid #f9b03f;
+	margin: 0 0 0.5em;
+}
+
+#mySpinsText{
+	font-size:1.5em;
+	display:inline-block;
+}
+
+#mySpinsImg{
+	margin: 0 0 0.5em;
+}
+
+#mySpinsNum{
+	color: #f9b03f;
+	display:inline-block;
+	float:right;
+	position:relative;
+	font-size: 1.75em;
+	margin: 0.15em 0.5em 0 0;
+}
+
+#djList{
+	
+}
+#djListText{
+	font-size:1.2em;
+}
+#djNum{
+	color:#f9b03f;
+}
+
