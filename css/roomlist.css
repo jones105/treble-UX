@@ -74,7 +74,7 @@ a {
 	width: 720px;
 	margin: 50px auto 0px auto;
 	padding: 10px;
-	background-color: rgba(150, 150, 150, .5);
+	background-color: rgba(350, 350, 350, .9);
 	border-top-right-radius: 5px;
 	border-top-left-radius: 5px;
 	-moz-box-shadow: 0 0 7px #111111;
@@ -157,7 +157,7 @@ ol {margin:0px; padding: 0px;}
 }
 
 .roomBlock {
-	background-color: rgba(0, 0, 0, .2);
+	background-color: rgba(0, 0, 0, .1);
 	overflow: hidden;
 	padding: 0px;
 	vertical-align: top;
@@ -170,6 +170,7 @@ ol {margin:0px; padding: 0px;}
 	-webkit-transition-delay: 0ms;
 	-o-transition-delay: 0ms;
 	padding:10px;
+    outline: 1px solid #888;
 }
 
 .content {
@@ -223,11 +224,11 @@ ol {margin:0px; padding: 0px;}
 
 
 .roomBlock:hover {
-	box-shadow: 0 0 10px #000 inset;
-	-webkit-box-shadow: 0 0 10px #000 inset;
-	-moz-box-shadow: 0 0 10px #000 inset;
-	-o-box-shadow: 0 0 10px #000 inset;
-	outline: 1px solid #000;
+	box-shadow: 0 0 5px #000 inset;
+	-webkit-box-shadow: 0 0 5px #000 inset;
+	-moz-box-shadow: 0 0 5px #000 inset;
+	-o-box-shadow: 0 0 5px #000 inset;
+	outline: 1px solid #ddd;
 	-moz-transition-duration: 300ms;
 	-webkit-transition-duration: 300ms;
 	-o-transition-duration: 300ms;	
@@ -236,9 +237,9 @@ ol {margin:0px; padding: 0px;}
 
 .roomBlock:hover .content {
 	margin-top:-150px;
-	-moz-transition-delay: 300ms;
-	-webkit-transition-delay: 300ms;
-	-o-transition-delay: 300ms;
+	-moz-transition-delay: 500ms;
+	-webkit-transition-delay: 500ms;
+	-o-transition-delay: 500ms;
 }
 
 @media all and (min-width: 1285px) {
