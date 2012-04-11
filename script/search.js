@@ -10,11 +10,11 @@ $(document).ready(function() {
 	$('#topbar').slideDown(1500);
 
 	
-	$('#playlist').sortable({
-		connectWith: ".droptrue",
-		scroll: false,
-		revert: true,
-	}).disableSelection();
+//	$('#playlist').sortable({
+//		connectWith: ".droptrue",
+//		scroll: false,
+//		revert: true,
+//	}).disableSelection();
 	
 //	$('#resultList').scroll( function(event) {
 //		event.preventDefault();
@@ -232,7 +232,7 @@ function playSong(songId){
 }
 
 SC.whenStreamingReady(function(){
-		showModal($( "#soundReadyModal" ));
+		//showModal($( "#soundReadyModal" ));
 
 
 });

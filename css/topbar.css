@@ -1,18 +1,72 @@
 #topbar
 {
-position: fixed;
-top: 0px;
-left: 0px;
-width: 100%;
-z-index: 10000;
-height: 30px;
-padding: 5px;
-background: #383838; /* Old browsers */
-background: -moz-linear-gradient(top, #383838 1%, #0c0c0c 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#383838), color-stop(100%,#0c0c0c)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, #383838 1%,#0c0c0c 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, #383838 1%,#0c0c0c 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, #383838 1%,#0c0c0c 100%); /* IE10+ */
-background: linear-gradient(top, #383838 1%,#0c0c0c 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#383838', endColorstr='#0c0c0c',GradientType=0 ); /* IE6-9 */
+    position: fixed;
+    top: 0px;
+    z-index: 10000;
+    height: 30px;
+    padding: 5px;
+    background: #111;
+    background: -moz-linear-gradient(top, #000 85%, transparent 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(85%,#000), color-stop(100%,transparent));
+    background: -webkit-linear-gradient(top, #000 85%,transparent 100%);
+    background: -o-linear-gradient(top, #000 85%,transparent 100%);
+    background: -ms-linear-gradient(top, #000 85%, transparent 100%);
+    background: linear-gradient(top, #000 85%,transparent 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000', endColorstr='transparent',GradientType=0 );
+    width: 1260px;
+    margin-left: -10px;
+    -moz-transition-timing-function: ease;
+    -moz-transition-duration: 300ms;
+    -webkit-transition-timing-function: ease;
+    -webkit-transition-duration: 300ms;
+    -o-transition-timing-function: ease;
+    -o-transition-duration: 300ms;
+    transition-timing-function: ease;
+    transition-duration: 300ms;
+    -moz-transition-delay: 150ms;
+    -webkit-transition-delay: 150ms;
+    -o-transition-delay: 150ms;
+}
+
+li.tagline {
+list-style: none;
+color: #555;
+font-size: 12px;
+font-family: sans-serif;
+font-weight: bold;
+margin-left: 10px;
+}
+
+img.logo {
+width: 135px; 
+margin-left: 8px;
+}
+
+img.logo:hover {
+	opacity: 1;
+}
+
+
+@media all and (max-width: 1285px) and (min-width: 735px) 
+{
+  #topbar
+   {
+  width: 730px;
+  }
+}
+
+@media all and (max-width: 735px) and (min-width: 600px) 
+{
+  #topbar
+   {
+  width: 530px;
+  }
+}
+
+@media all and (max-width: 600px) 
+{
+  #topbar 
+   {
+  width: 300px;
+  }
 }
