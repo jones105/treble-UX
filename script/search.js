@@ -32,7 +32,7 @@ $(document).ready(function() {
 	});
   
 		$('#searchForm').submit(function() { 
-	
+        if ( $('#searchInput').val() != "") {
 		
 		getMore = false;				   
 		$('#resultList').children().css("opacity" , "0.4")
@@ -42,18 +42,9 @@ $(document).ready(function() {
 		
 		queryString=$('#searchInput').val();
 	    
-	    $('#searchForm').animate({"margin-top" : "0px"});
-	    $('#playlist').css("display", "none");
-	    $('.searchNote').fadeOut();
-	    $('#searchResults').css("display" , "block");		
-		$('#searchResults').animate({"height" : "347px"});
-		$('#doneSearching').css("display" , "block");	
-		$('#doneSearching').animate({"height" : "20px"});
-		$('#searchResults').animate({"opacity" : "1.0"});
-		$('#doneSearching').animate({"opacity" : "1.0"});
-				
+		$('#search').animate({"margin-top" : "10px"});		
     	search( getMore );
-
+        }
 		//return false so no action takes place
 		  return false; 
 		});
@@ -86,13 +77,25 @@ function search( getMore ){
 			if ( !getMore)
 				$('#resultList').children().remove()					
 			$.each(tracks, function(index, val) {  
+                var first = (index == 0) ? "first" : "";
+                var url = (val.artwork_url != null) ? val.artwork_url : "/image/albumDefault.jpg";
+                var dur = (val.duration / 60000).toPrecision(3);
 				if (val.streamable==true){
-			  $('#resultList').append('<li class="playable" id="'+val.id+'" songId='+val.id+'>'+
-									  '<div class="title" id="' + val.title + '" >' + val.title + '</div>' +
-									  '<div class="searchbuttons">' +
+			  $('#resultList').append('<li class="playable ' + first + '" id="'+val.id+'" songId='+val.id+'>'+
+                                      '<img src="' + url + '" id="image" />' +
+									  '<div class="info">' +
+                                        '<div class="title" id="' + val.title + '" >' + val.title + '</div>' +
+									    '<div class="duration">duration: ' + dur + ' minutes</div>' +
+                                        '<div class="user">' + val.user.username + '</div>' +
+                                      '</div>' +
+                                      '<div class="searchbuttons">' +
 									      '<input class="addbutton"  type="button" value="+" />' +
-									      '<button id="' + val.id + '" onclick="playSong(' + val.id + ')" class="playbutton">p</button> </li>' +
-									  '</div>');
+									      '<button id="' + val.id + '" onclick="playSong(' + val.id + ')" class="playbutton">p</button>' +
+									  '</div>' +
+                                      '<div class="social">' +
+                                        '<input type="button" value="like" class="likeSong" />' +
+									    '<input type="button" value="add to playlist" class="addSong" />' +
+                                      '</div></li>');
 				}					  											  
 			});
 			
@@ -166,6 +169,15 @@ function search( getMore ){
 				
 				}
 			});
+
+            $('#playlist').css("display", "none");
+            $('.searchNote').fadeOut();
+            $('#searchResults').css("display" , "block");		
+            $('#searchResults').animate({"height" : "100%"});
+            $('#doneSearching').css("display" , "block");	
+            $('#doneSearching').animate({"height" : "20px"});
+            $('#searchResults').animate({"opacity" : "1.0"});
+            $('#doneSearching').animate({"opacity" : "1.0"});
 			 $('#resultList li').removeClass("even");
 			 $('#resultList li').removeClass("odd");
 			
@@ -199,12 +211,12 @@ function doneSearching() {
 function checkForNoQueueResults() {
 	if ($(".song").length > 0)
 	{
-		$('#searchForm').animate({"margin-top" : "0px"});
+		$('#search').animate({"margin-top" : "10px"});
 		$("#noResults").html("");
 	}
 	else
 	{
-		$('#searchForm').animate({"margin-top" : "80px"});
+		$('#search').animate({"margin-top" : "80px"});
 		$("#noResults").html("<div><p class='searchNote' >search for songs to add them</p>");
 	}
 }
