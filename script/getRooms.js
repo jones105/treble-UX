@@ -1,9 +1,5 @@
-$(document).ready (function(){
-    getRooms(1);
-});
-
-function getRooms(pageNumber) {
-var page = (pageNumber==1) ? "getRooms" : "rooms/" + pageNumber; 
+function getRooms( pagenum ) {
+var page = (pagenum==1) ? "getRooms" : "rooms/" + pagenum; 
 $.ajax({
 		url: "http://pigppo.com:9010/TrebleAPI/" + page,
 		dataType: 'html',
@@ -41,19 +37,27 @@ $.ajax({
                                
                 }        
 			}
-            $("a").live("click", function(){  $(this).attr('target', '_blank'); });  
-            if (data.next != undefined) {
+            $("a").live("click", function(){
+                $(this).attr('target', '_blank'); 
+            });  
+            $(document).ready (function() {
+                $(document).scroll( function(e) {		        
+                    if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                        console.log(data.next);
+                        var next = data.next;
+                        if (data.next) {
+                            var next = data.next;
+                            var nextID = next.charAt(next.length-1);
+                            event.preventDefault();
+                            //getRooms( nextID );   
+                        }	      
+                    }
+                }); 
+            });
             var next = data.next;
             var nextID = next.charAt(next.length-1);
-            var getMoreBtn = "<input class='next' type='button' value='see more' onClick='getRooms("+nextID+")' \>"
-            html += getMoreBtn;            
-            }
+            html += "<input type='button' onClick='getRooms(" + nextID + ")' value='get more' />";
 			$('#rooms').append(html);
 		}
 	});
-}
-
-function joinRoom( roomID ) {
-    
-
 }

@@ -9,7 +9,7 @@ body {
   color: #333;
   font-size: 16px;
   margin: 0 auto;
-  padding: 10px 10px 0;
+  padding: 10px 0 0;
   padding-bottom: 1px;
   -moz-transition-timing-function: ease;
   -moz-transition-duration: 300ms;
@@ -40,7 +40,12 @@ a {
 }
 
 #searchForm {
-	margin-top: 80px;
+    margin: 0 auto;
+    padding: 15px;
+    border: 3px solid #F9AF3F;
+    width: 373px;
+    background: -webkit-gradient(linear,0% 0,0% 100%,from(#212828),to(#121616));
+    background: -moz-linear-gradient(0% 0 270deg,#212828,#121616);
 }
 
 #noResults > div
@@ -53,6 +58,13 @@ a {
 	width: 160px;
 }
 
+#search {
+    width: 900px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
 .searchText {
 	color: #EEE;
 	font-family: sans-serif;
@@ -62,17 +74,17 @@ a {
 }
 
 #resultList {
-	overflow-x: hidden;
-	overflow-y: scroll;
 	margin-top: 10px;
-	height: 347px;
+    border: 1px solid #888;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
 }
 
 #resultList .even {
-	background-color: #333;
+	background-color: #F3F3F3;
  }
 #resultList .odd {
-	background-color: #222;
+	background-color: #ffffff;
  }
  
 #resultList .even:hover > div {
@@ -92,16 +104,20 @@ a {
 
 .playable {
 	margin: 0px;
-	padding: 2px;
-	height: 25px;
-	padding-left: 7px;
+	height: 100px;
+	padding: 10px;
 }
 
-.playable .title {
+#image {
+    float: left;
+    max-width: 102px;
+}
+
+.playable .title,.playable .duration,.playable .user {
 	height: 18px;
-	margin-top: 4px;
+	margin: 4px 0 0 30px;
 	overflow: hidden;
-	width: 150px;
+	width: 550px;
 	float: left;
 	text-shadow: none;
 	font-size: 19px;
@@ -109,6 +125,17 @@ a {
 	font-family: sans-serif;
 	font-weight: bold;
 	font-size: 15px;
+}
+.social {display:none;}
+.playable:hover .social{display: block;}
+.social .add {
+    width: 50px;
+    float: left;
+}
+.social .likeSong{  
+    width: 50px;
+    float: left;
+    margin-left: 30px;
 }
 
 ol{
@@ -129,12 +156,12 @@ float: left;
 }
 
 #searchInput {
+    padding: 17px 180px 17px 20px;
 	background: url(/image/search-dark.png) no-repeat 171px 6px #777;
 	border: 0 none;
 	font: bold 12px Arial,Helvetica,Sans-serif;
 	color: black;
 	width: 170px;
-	padding: 7px 16px 7px 16px;
 	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
 	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
 	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
@@ -142,10 +169,7 @@ float: left;
 	-moz-transition: all 0.7s ease 0s;
 	-o-transition: all 0.7s ease 0s;
 	transition: all 0.7s ease 0s;
-	margin-top: 1px;
-	margin-bottom: 0px;
 	border: 1px solid #333;
-	margin-left: 20px;
 }
 
 #searchInput:hover {
@@ -178,13 +202,19 @@ float: left;
 	background-color: #EEE;
 	border: 1px solid #777;
 }
+li.first {
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+}
 
 #searchResults {
-	margin: 0;
-	height: 0px;
-	padding-left: 0;
-	width: 244px;
-	opacity: 0.0;
+    height: 100%;
+    margin-top: 30px;
+    opacity: 0;
+    padding: 20px 50px;
+    background-color: #e6e6e6;
+    border-top-right-radius: 13px;
+    border-top-left-radius: 13px;
 }
 
 .searchbuttons {

@@ -2,19 +2,45 @@
 {
     position: fixed;
     top: 0px;
+    left:0px;
     z-index: 10000;
-    height: 30px;
+    height: 45px;
     padding: 5px;
-    background: #111;
-    background: -moz-linear-gradient(top, #000 85%, transparent 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(85%,#000), color-stop(100%,transparent));
-    background: -webkit-linear-gradient(top, #000 85%,transparent 100%);
-    background: -o-linear-gradient(top, #000 85%,transparent 100%);
-    background: -ms-linear-gradient(top, #000 85%, transparent 100%);
-    background: linear-gradient(top, #000 85%,transparent 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000', endColorstr='transparent',GradientType=0 );
-    width: 1260px;
-    margin-left: -10px;
+    width: 100%;
+    box-shadow: 0px 0px 10px #000;
+    -moz-shadow: 0px 0px 10px #000;
+    -webkit-shadow: 0px 0px 10px #000;
+    
+    background: -webkit-gradient(linear,0% 0,0% 100%,from(#212828),to(#121616));
+    background: -moz-linear-gradient(0% 0 270deg,#212828,#121616);
+    -moz-transition-timing-function: ease;
+    -moz-transition-duration: 300ms;
+    -webkit-transition-timing-function: ease;
+    -webkit-transition-duration: 300ms;
+    -o-transition-timing-function: ease;
+    -o-transition-duration: 300ms;
+    transition-timing-function: ease;
+    transition-duration: 300ms;
+    -moz-transition-delay: 150ms;
+    -webkit-transition-delay: 150ms;
+    -o-transition-delay: 150ms;
+}
+
+#footer
+{
+    position: fixed;
+    bottom: 0px;
+    left:0px;
+    z-index: 10000;
+    height: 45px;
+    padding: 5px;
+    width: 100%;
+    box-shadow: 0px 0px 10px #000;
+    -moz-shadow: 0px 0px 10px #000;
+    -webkit-shadow: 0px 0px 10px #000;
+    
+    background: -webkit-gradient(linear,0% 0,0% 100%,from(#212828),to(#121616));
+    background: -moz-linear-gradient(0% 0 270deg,#212828,#121616);
     -moz-transition-timing-function: ease;
     -moz-transition-duration: 300ms;
     -webkit-transition-timing-function: ease;
@@ -38,35 +64,9 @@ margin-left: 10px;
 }
 
 img.logo {
-width: 135px; 
-margin-left: 8px;
+width: 215px; 
 }
 
 img.logo:hover {
 	opacity: 1;
-}
-
-
-@media all and (max-width: 1285px) and (min-width: 735px) 
-{
-  #topbar
-   {
-  width: 730px;
-  }
-}
-
-@media all and (max-width: 735px) and (min-width: 600px) 
-{
-  #topbar
-   {
-  width: 530px;
-  }
-}
-
-@media all and (max-width: 600px) 
-{
-  #topbar 
-   {
-  width: 300px;
-  }
 }

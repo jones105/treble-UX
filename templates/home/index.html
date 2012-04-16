@@ -1,6 +1,7 @@
 {% extends "base_info.html" %}
 {% block content %}
 {% include "includes/topbar.html" %}
+{% include "includes/footer.html" %}
 
 <script type="text/javascript" src="/script/jqueryui.js"></script>   
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
@@ -10,13 +11,12 @@
 <script type="text/javascript" src="/script/social.js"></script>
 <script type="text/javascript" src="/script/getRooms.js"></script>
 <script type="text/javascript" src="/script/search.js"></script> 
+<script type="text/javascript" src="/script/updatePages.js"></script> 
 
 <nav id="menu">
-	<ol>
-		<li class="item new" onclick="updateURL('new')">New</li>
-		<li class="item top" onclick="updateURL('top')">Top</li>
-		<li class="item favorited" onclick="updateURL('favorited')">Favorited</li>
-		<li class="item yours" onclick="updateURL('yours')">Yours</li>
+    <ol>
+        <li class="item home active" onclick="updateURL('home')">Home</li>
+		<li class="item new" onclick="updateURL('new')">New Rooms</li>
 	</ol>
 	<div class="separator"></div>
 	<ol class="info">
@@ -28,24 +28,10 @@
 	</ol>
 </nav>
 
-<script type="text/javascript">
-updateURL('top');
-function updateURL(newURL) {
-	for (var i=0; i < $('.item').length; i++) { $('.item').removeClass("active") };
-	$('.'+newURL).attr("class","item " + newURL + " active");
-	if (newURL == 'top') {window.history.pushState("top", "Top", "/");}
-	if (newURL == 'new') {window.history.pushState("new", "New", "/");}
-	if (newURL == 'favorited') {window.history.pushState("favorited", "Favorited", "/");}
-	if (newURL == 'yours') {window.history.pushState("yours", "Yours", "/");}
-	if (newURL == 'random') {window.history.pushState("random", "Random", "/");}
-}
-</script>
-
 <div id="content">
-	<ul id="rooms"></ul>
-</div>
-<div id="search">
-{% include "includes/search.html" %}
+    <!--<div id="welcome"> Welcome to treble.fm</div>-->
+	<ul id="rooms">	</ul>
+    <div id="search">{% include "includes/search.html" %}</div>
 </div>
 <style>
 #createRoom {
@@ -75,5 +61,25 @@ background: -moz-linear-gradient( center top, #DB8300 5%, #F9AF3F 100% );
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#db8300', endColorstr='#f9af3f');
 }
 </style>
+
+<script>
+/*remove when release 
+$(document).ready(function(){  
+ $('#splash').fadeIn();
+});*/
+</script>
+<div style="display:none;" id="splash">
+	<div id="pageLayout">
+		<p id="comingSoon">Thanks for checking in,<br> <br>
+		                                     We really hope you like the progress we are making.
+											 Everyone who requests an invite below will be notified soon about our private alpha release.<br><br>Thanks,<br>
+												<img style="margin-left:-8px; margin-top:10px; width:150px;" id="layoutImage" src="/image/logo.png"></img><br><br><br>
+
+		</p>
+											<div rel="OXUR76QR" class="lrdiscoverwidget" data-logo="off" data-background="off" data-share-url="www.treble.fm" data-css=""></div><script type="text/javascript" src="http://launchrock-ignition.s3.amazonaws.com/ignition.1.1.js"></script>
+         <script>    $(".input").val("notify me"); </script>
+	 </div>
+</div>	
+
 
 {% endblock %}
